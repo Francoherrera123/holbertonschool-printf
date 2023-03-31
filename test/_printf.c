@@ -1,21 +1,18 @@
-#include "printf.h"
+#include <stdarg.h>
+#include "main.h"
 /**
+ * _printf - smart version of printf
  *
- *
- *
+ *@format: contstant char
  */
 int _printf(const char *format, ...)
 {
-	int recor;
+	va_list args;
 
-	for (recor = 0; format[recor]; recor++)
-	{
-		switch(format[recor + 1])
-		case 37:
-
-
-
-
-			/* _printf("hola %s\n %d\n", "mundo" 2 ); */
-	}
+	if (format == NULL) /*Check that format is not null*/
+		return (-1);
+	va_start(args, format);
+	main_controller((char *) format, args);
+	va_end(args);
+	return (0);
 }
