@@ -10,12 +10,9 @@
 int main(void)
 {
 	_printf("%s\n", "hello");
-	printf("%s\n", "hello");
 	_printf("%d\n", 123);
-	printf("%d\n", 123);
 	_printf("%c\n", 'A');
-	printf("%c\n", 'A');
 	_printf("%%\n");
-	printf("%%\n");
+	_printf("hola\t [%r]\n");
 	return (0);
 }

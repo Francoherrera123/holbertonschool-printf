@@ -4,9 +4,6 @@
 #define printf
 
 int _printf(const char *format, ...);
-void reverse(char *s, int length);
-void itoa(int n, char *s);
-void ftoa(double f, char *s);
 int _putchar(char c);
 void function_s(char *s);
 void function_c(int c);

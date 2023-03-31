@@ -8,11 +8,14 @@
  */
 void main_controller(char *format, va_list args)
 {
-	while (*format != '\0')
+	int i = 0;
+
+	while (format[i] != '\0')
 	{
-		if (*format == '%')
+		if (format[i] == '%')
 		{
-			switch (*format)
+			i++;
+			switch (format[i])
 			{
 				case 's':
 						function_s(va_arg(args, char *));
@@ -30,14 +33,15 @@ void main_controller(char *format, va_list args)
 						function_decimal(va_arg(args, int));
 						break;
 				default:
-						function_bslash(*format);
+						_putchar('%');
+						_putchar(format[i]);
 						break;
 			}
 		}
 		else
 		{
-			_putchar(*format);
+			_putchar(format[i]);
 		}
-		format++;
+		i++;
 	}
 }
