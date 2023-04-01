@@ -4,7 +4,7 @@
  * function_c - Prints char
  *
  * @c: char to Print
- *
+ * Return: counter i
  */
 void function_c(int c)
 {
@@ -15,13 +15,19 @@ void function_c(int c)
  *
  * @s: char pointer to Print
  *
+ * Return: counter i
  */
-void function_s(char *s)
+int function_s(char *s)
 {
 	int i;
 
+	if (s == NULL)
+		return (-1);
+
 	for (i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
+
+	return (i - 1);
 }
 /**
  * function_decimal - Prints a integer
