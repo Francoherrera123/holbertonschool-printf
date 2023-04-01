@@ -56,7 +56,7 @@ void function_bslash(char c)
  */
 int main_controller(char *format, va_list args)
 {
-	int i = 0;
+	int i = 0, count = 0, check = 0;
 
 	while (format[i] != '\0')
 	{
@@ -66,31 +66,37 @@ int main_controller(char *format, va_list args)
 			switch (format[i])
 			{
 				case 's':
-						function_s(va_arg(args, char *));
-						break;
+					check = function_s(va_arg(args, char *));
+					if (check == -1)
+						return (-1);
+
+					count += check;
+					break;
 				case 'c':
 						function_c(va_arg(args, int));
+						count++;
 						break;
 				case '%':
 						_putchar('%');
 						break;
 				case 'd':
 						function_decimal(va_arg(args, int));
+						count++;
 						break;
 				case 'i':
 						function_decimal(va_arg(args, int));
+						count++;
 						break;
 				default:
 						_putchar('%');
 						_putchar(format[i]);
 						break;
 			}
-		}
-		else
+		} else
 		{
 			_putchar(format[i]);
 		}
-		i++;
+		i++, count++;
 	}
-	return (i);
+	return (count);
 }
