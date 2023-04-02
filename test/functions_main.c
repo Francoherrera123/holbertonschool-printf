@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "main.h"
 /**
  * function_c - Prints char
@@ -19,11 +20,20 @@ void function_c(int c)
  */
 int function_s(char *s)
 {
-	int i;
+	int i = 0, x;
+	char *exit = "(null)";
 
 	if (s == NULL)
-		return (-1);
-
+	{
+		if (strncmp(s + i, "NULL", 4u) == 0 && !s[i + 4])
+		{
+			for (x = 0; exit[x] != '\0'; x++)
+				_putchar(exit[x]);
+			return (x - 1);
+		}
+		else
+			return (-1);
+	}
 	for (i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
 
