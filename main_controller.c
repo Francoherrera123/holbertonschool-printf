@@ -41,11 +41,57 @@ void function_bslash(char c)
 			_putchar('\v');
 			break;
 		default:
-			_putchar('%');
+			_putchar('\\');
 			_putchar(c);
 			break;
 	}
 }
+/**
+ * switch_controller - diferent cases of the character after %
+ *
+ * @format: char of the printf
+ * @args: argument list
+ * @count: counter of main_controller
+ */
+void switch_controller(char format, va_list args, int *count)
+{
+	int check;
+
+	switch (format)
+	{
+		case 's':
+			check = function_s(va_arg(args, char *));
+			if (check == -1)
+				*count = -1;
+			else
+				*count += check;
+			(*count)++;
+			break;
+		case 'c':
+			function_c(va_arg(args, int));
+			(*count)++;
+			break;
+		case '%':
+			_putchar('%');
+			(*count)++;
+			break;
+		case 'd':
+			check = function_decimal(va_arg(args, int));
+			(*count) += check;
+			break;
+		case 'i':
+			check = function_decimal(va_arg(args, int));
+			(*count) += check;
+			break;
+		default:
+			_putchar('%');
+			(*count)++;
+			_putchar(format);
+			(*count)++;
+			break;
+	}
+}
+
 /**
  * main_controller - controller of special characters like % or \
  *
@@ -56,41 +102,28 @@ void function_bslash(char c)
  */
 int main_controller(char *format, va_list args)
 {
-	int i = 0;
+	int i = 0, count = 0;
+
+	if (format == NULL)
+		return (-1);
 
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			switch (format[i])
-			{
-				case 's':
-						function_s(va_arg(args, char *));
-						break;
-				case 'c':
-						function_c(va_arg(args, int));
-						break;
-				case '%':
-						_putchar('%');
-						break;
-				case 'd':
-						function_decimal(va_arg(args, int));
-						break;
-				case 'i':
-						function_decimal(va_arg(args, int));
-						break;
-				default:
-						_putchar('%');
-						_putchar(format[i]);
-						break;
-			}
-		}
-		else
+			if (format[i] == '\0')
+				return (-1);
+
+			switch_controller(format[i], args, &count);
+			if (count == -1)
+				return (-1);
+		} else
 		{
 			_putchar(format[i]);
+			count++;
 		}
 		i++;
 	}
-	return (i);
+	return (count);
 }

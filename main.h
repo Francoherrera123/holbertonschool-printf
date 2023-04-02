@@ -6,9 +6,9 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-void function_s(char *s);
+int function_s(char *s);
 void function_c(int c);
-void function_decimal(int d);
+int function_decimal(int d);
 void function_bslash(char c);
 int main_controller(char *format, va_list args);
 #endif

@@ -65,24 +65,29 @@ void switch_controller(char format, va_list args, int *count)
 				*count = -1;
 			else
 				*count += check;
+			(*count)++;
 			break;
 		case 'c':
 			function_c(va_arg(args, int));
+			(*count)++;
 			break;
 		case '%':
 			_putchar('%');
+			(*count)++;
 			break;
 		case 'd':
-			function_decimal(va_arg(args, int));
-			(*count)++;
+			check = function_decimal(va_arg(args, int));
+			(*count) += check;
 			break;
 		case 'i':
-			function_decimal(va_arg(args, int));
-			(*count)++;
+			check = function_decimal(va_arg(args, int));
+			(*count) += check;
 			break;
 		default:
 			_putchar('%');
+			(*count)++;
 			_putchar(format);
+			(*count)++;
 			break;
 	}
 }
@@ -116,8 +121,9 @@ int main_controller(char *format, va_list args)
 		} else
 		{
 			_putchar(format[i]);
+			count++;
 		}
-		i++, count++;
+		i++;
 	}
 	return (count);
 }
