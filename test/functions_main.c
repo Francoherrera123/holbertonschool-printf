@@ -20,22 +20,24 @@ void function_c(int c)
  */
 int function_s(char *s)
 {
-	int i = 0, x;
+	int i = 0;
 	char *exit = "(null)";
 
 	if (s == NULL)
 	{
-		if (strncmp(s + i, "NULL", 4u) == 0 && !s[i + 4])
-		{
-			for (x = 0; exit[x] != '\0'; x++)
-				_putchar(exit[x]);
-			return (x - 1);
-		}
-		else
-			return (-1);
+		if (*(exit + i) == '\0')
+			_putchar(' ');
+		while (*(exit + i))
+			_putchar(*(exit + i++));
 	}
 	for (i = 0; s[i] != '\0'; i++)
+		if (strncmp(s + i, "NULL", 4u) == 0 && !s[i + 4])
+		{
+			_putchar(exit[i]);
+		} else
+		{
 		_putchar(s[i]);
+		}
 
 	return (i - 1);
 }
