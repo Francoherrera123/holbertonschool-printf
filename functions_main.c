@@ -24,6 +24,8 @@ int function_s(char *s)
 
 	if (s == NULL)
 		s = "(null)";
+	if (s == '\0')
+		return (0);
 
 	for (i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
