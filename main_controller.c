@@ -66,7 +66,11 @@ int main_controller(char *format, va_list args)
 		if (format[i] == '%')
 		{
 			i++;
-
+			if (format[i] == '\0')
+			{
+				_putchar('%');
+				return (count +1);
+			}
 			switch_controller(format[i], args, &count);
 			if (count == -1)
 				return (-1);
