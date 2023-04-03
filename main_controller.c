@@ -18,7 +18,6 @@ void switch_controller(char format, va_list args, int *count)
 				*count = -1;
 			else
 				*count += check;
-			(*count)++;
 			break;
 		case 'c':
 			function_c(va_arg(args, int));
