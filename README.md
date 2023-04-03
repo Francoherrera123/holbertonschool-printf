@@ -4,7 +4,7 @@
 
 This project was motivated by a desire to take on new language challenges and the opportunity to collaborate with a partner. Holberton School provided us with this proposal, allowing us to test our skills as programmers. Our code, _printf, is an alternative to the C language print command, "printf." It performs many of the same functions as its counterpart.
 
-## Índice (opcional)
+## Índice
 
 
 - [Use](#use)
