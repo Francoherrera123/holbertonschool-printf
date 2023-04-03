@@ -21,27 +21,14 @@ void function_c(int c)
 int function_s(char *s)
 {
 	int i;
-	char *exit = "(null)";
 
 	if (s == NULL)
-	{
-		i = 0;
-		if (*(exit + i) == '\0')
-			_putchar(' ');
-		while (*(exit + i))
-			_putchar(*(exit + i++));
-		return (i - 1);
-	}
-	for (i = 0; s[i] != '\0'; i++)
-		if (strncmp(s + i, "NULL", 4u) == 0 && !s[i + 4])
-		{
-			_putchar(exit[i]);
-		} else
-		{
-		_putchar(s[i]);
-		}
+		s = "(null)";
 
-	return (i - 1);
+	for (i = 0; s[i] != '\0'; i++)
+		_putchar(s[i]);
+
+	return (i);
 }
 /**
  * function_decimal - Prints a integer

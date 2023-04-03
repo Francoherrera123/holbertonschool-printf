@@ -9,5 +9,16 @@
  *     */
 int main(void)
 {
-	_printf("\t hola \n buenas");
+	int a, b;
+
+	a = _printf("Hola %%%%%s %d\n", "Hola2", 3);
+	b = printf("Hola %%%%%s %d\n", "Hola2", 3);
+
+	_printf("\n\n");
+
+	a = _printf("Hola, %s %s", "que tal?", NULL);
+	b = printf("Hola, %s %s", "que tal?", NULL);
+
+	_printf("%d, %d", a, b);
+	return (0);
 }
