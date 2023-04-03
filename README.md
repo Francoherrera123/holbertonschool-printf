@@ -11,7 +11,7 @@ Si su README es extenso, agregue un índice para facilitar que los usuarios encu
 - [Use](#use)
 - [Functions](#Functions)
 - [Requirements](#Requirements)
-- [More Info](#MoreInfo)
+- [More Info](#More Info)
 
 ## Use
 
@@ -56,15 +56,21 @@ Don’t forget to push your header file
 All your header files should be include guarded
 Note that we will not provide the _putchar function for this project
 
-## MoreInfo
+## More Info
 
 Authorized functions and macros
 
 write (man 2 write)
+
 malloc (man 3 malloc)
+
 free (man 3 free)
+
 va_start (man 3 va_start)
+
 va_end (man 3 va_end)
+
 va_copy (man 3 va_copy)
+
 va_arg (man 3 va_arg)
 
