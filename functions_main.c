@@ -30,7 +30,7 @@ int function_s(char *s)
 	for (i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
 
-	return (i - 1);
+	return (i);
 }
 /**
  * function_decimal - Prints a integer
