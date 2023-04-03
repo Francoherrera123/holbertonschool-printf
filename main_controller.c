@@ -58,7 +58,7 @@ int main_controller(char *format, va_list args)
 
 	if (format == NULL)
 		return (-1);
-	if (format == '\0')
+	if (format[i] == '\0')
 		return (count);
 
 	while (format[i] != '\0')
