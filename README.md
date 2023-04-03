@@ -28,7 +28,15 @@ _printf("You have %%78 battery left in your cell phone");
 ##Functions
 
 main_controller is a main function that controls the occurrence of special characters in _printf, such as % or \.
+
 switch_controller controls the cases of % by calling its respective function depending on the character that follows the % symbol.
+
+function_s checks whether the reference of %s is NULL. If it is, it prints "(null)" and counts its characters. Otherwise, it prints the content of the reference and returns the number of characters.
+
+function_c prints the referenced character that follows the %c format specifier.
+
+function_decimal recursively prints the digits of a decimal number in the correct order. If the number is negative, it prints a minus sign first. It counts the number of digits it prints and returns that count.
+
 
 
 ## Cómo contribuir
