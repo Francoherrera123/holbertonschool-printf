@@ -11,7 +11,7 @@ Si su README es extenso, agregue un índice para facilitar que los usuarios encu
 - [Use](#use)
 - [Functions](#Functions)
 - [Requirements](#Requirements)
-- [More Info](#More Info)
+- [More Info](#More-Info)
 
 ## Use
 
@@ -56,7 +56,7 @@ Don’t forget to push your header file
 All your header files should be include guarded
 Note that we will not provide the _putchar function for this project
 
-## More Info
+## More-Info
 
 Authorized functions and macros
 
