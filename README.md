@@ -6,7 +6,6 @@ This project was motivated by a desire to take on new language challenges and th
 
 ## Índice (opcional)
 
-Si su README es extenso, agregue un índice para facilitar que los usuarios encuentren lo que necesitan.
 
 - [Use](#use)
 - [Functions](#Functions)
