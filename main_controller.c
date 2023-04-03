@@ -1,52 +1,5 @@
 #include "main.h"
 /**
- * function_bslash - controller in case format is a backslash
- *
- * @c: char which is equal to the format character
- *
- *
- */
-void function_bslash(char c)
-{
-	switch (c)
-	{
-		case '\\':
-			_putchar('\\');
-			break;
-		case '\'':
-			_putchar('\'');
-			break;
-		case '\"':
-			_putchar('\"');
-			break;
-		case 'n':
-			_putchar('\n');
-			break;
-		case 'r':
-			_putchar('\r');
-			break;
-		case 't':
-			_putchar('\t');
-			break;
-		case 'a':
-			_putchar('\a');
-			break;
-		case 'b':
-			_putchar('\b');
-			break;
-		case 'f':
-			_putchar('\f');
-			break;
-		case 'v':
-			_putchar('\v');
-			break;
-		default:
-			_putchar('\\');
-			_putchar(c);
-			break;
-	}
-}
-/**
  * switch_controller - diferent cases of the character after %
  *
  * @format: char of the printf
@@ -112,8 +65,6 @@ int main_controller(char *format, va_list args)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == '\0')
-				return (-1);
 
 			switch_controller(format[i], args, &count);
 			if (count == -1)
